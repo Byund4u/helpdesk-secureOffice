@@ -28,7 +28,7 @@ export const sendTelegram = async (message: string, attachments?: any[]) => {
       });
 
       // Sending media files
-      await fetch(`https://t.me/Byund4u_bot`, {
+      await fetch(`https://api.telegram.org/bot${token}/sendMediaGroup`, {
         method: 'POST',
         body: mediaFormData,
         headers: {
@@ -37,7 +37,7 @@ export const sendTelegram = async (message: string, attachments?: any[]) => {
       });
     } else {
       // Sending plain text message
-      await fetch(`https://t.me/Byund4u_bot`, {
+      await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
         method: 'POST',
         body: formData,
         headers: {

@@ -19,7 +19,7 @@ export const sendTelegram = async ({
     }
 
     // Sending the text message
-    const response = await fetch(`https://t.me/Byund4u_bot`, {
+    const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
       method: 'POST',
       body: JSON.stringify({
         chat_id: chatId,
@@ -41,7 +41,7 @@ export const sendTelegram = async ({
       });
 
       // Sending media files
-      await fetch(`https://t.me/Byund4u_bot`, {
+      await fetch(`https://api.telegram.org/bot${token}/sendMediaGroup`, {
         method: 'POST',
         body: mediaFormData,
         headers: {
