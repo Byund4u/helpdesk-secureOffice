@@ -1,0 +1,14 @@
+import type { NextApiRequest, NextApiResponse } from 'next';
+
+// Define the handler function
+export default function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  // You can handle different HTTP methods here
+  if (req.method === 'GET') {
+    res.status(200).json({ message: 'Hello from Next.js API route!' });
+  } else {
+    res.status(405).json({ error: 'Method Not Allowed' });
+  }
+}
